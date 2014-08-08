@@ -5,3 +5,8 @@ library(sqldf)
 powerfile <- file("household_power_consumption.txt")
 powerdata <- sqldf("Select * from powerfile where Date='1/2/2007' or Date='2/2/2007'", file.format = list(sep=";",header = TRUE))
 
+## Create a histogram for the data field Global_active_power, color the data bars red, set the main title and the x axes title
+
+hist(powerdata$Global_active_power,main="Global Active Power",col="red", xlab="Global Active Power (kilowatts)") 
+
+
