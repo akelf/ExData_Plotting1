@@ -1,12 +1,10 @@
 ## Project 1 Plot 2
 
-## Read the data file, restricting to just the dates 2007-02-01 to 2007-02-02
-library(sqldf)
-powerfile <- file("household_power_consumption.txt")
-powerdata <- sqldf("Select * from powerfile where Date='1/2/2007' or Date='2/2/2007'", file.format = list(sep=";",header = TRUE))
+## Code common to all four plots is in the file projectfunction.R
+## source the file here to run that code to download the data file, load the necessary data, 
+## and process the date and time
 
-## Combine the Date and Time fields to create a timestamp
-powerdata$timestamp <- strptime(paste(powerdata$Date,powerdata$Time), "%d/%m/%Y %H:%M:%S")
+source("projectfunction.R")
 
 ## Open the png graphics device for plot2.png as PNG with width 480 pixels height 480 pixels
 
